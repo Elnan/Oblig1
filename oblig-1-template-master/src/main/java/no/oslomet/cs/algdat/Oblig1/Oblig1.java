@@ -113,7 +113,7 @@ public class Oblig1 {
 
         //Sjekker om det er 0 elementer i tabellen
         if (a.length == 0) {
-            System.out.println("Tabellen er tom");
+            throw new UnsupportedOperationException("Tabellen er tom");
         }
 
         else {
@@ -148,7 +148,7 @@ public class Oblig1 {
 
         //Sjekker om tabellen er tom
         if (a.length == 0) {
-            System.out.println("Tabellen er tom");
+            throw new UnsupportedOperationException("Tabellen er tom");
         }
 
         else {
