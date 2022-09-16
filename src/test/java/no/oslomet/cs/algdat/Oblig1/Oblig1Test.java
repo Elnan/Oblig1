@@ -370,7 +370,7 @@ public class Oblig1Test {
     }
 
     ///// Oppgave 6 //////////////////////////////////////
-   /* @org.junit.jupiter.api.Test
+    @org.junit.jupiter.api.Test
     void oppgave6() {
         int antallFeil = 0;
 
@@ -481,7 +481,7 @@ public class Oblig1Test {
 
         assertEquals(0, antallFeil, "Du har for mange feil i oppgave 6");
     }
-*/
+
     ///// Oppgave 7 //////////////////////////////////////
     @org.junit.jupiter.api.Test
     void oppgave7() {
@@ -609,7 +609,7 @@ public class Oblig1Test {
     }
 
     ///// Oppgave 8 //////////////////////////////////////
-   /* @org.junit.jupiter.api.Test
+    @org.junit.jupiter.api.Test
     void oppgave8() {
         int antallFeil = 0;
 
@@ -982,5 +982,5 @@ public class Oblig1Test {
 
         return a;                        // permutasjonen returneres
     }
-*/
+
 } // class Oblig1Test
