@@ -1,5 +1,7 @@
 package no.oslomet.cs.algdat.Oblig1;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 ////// Testprogram for Oblig 1 ////////////////////////
@@ -24,7 +26,7 @@ import java.util.*;
 public class Oblig1Test {
 
     ///// Oppgave 1 //////////////////////////////////////
-    @org.junit.jupiter.api.Test
+   @org.junit.jupiter.api.Test
     void oppgave1() {
         int antallFeil = 0;
 
@@ -170,7 +172,7 @@ public class Oblig1Test {
     }
 
     ///// Oppgave 4 //////////////////////////////////////
-    @org.junit.jupiter.api.Test
+    @Test
     void oppgave4() {
         int antallFeil = 0;
 
@@ -368,7 +370,7 @@ public class Oblig1Test {
 
         assertEquals(0, antallFeil, "Du har for mange feil i oppgave 5");
     }
-
+/*
     ///// Oppgave 6 //////////////////////////////////////
     @org.junit.jupiter.api.Test
     void oppgave6() {
@@ -481,6 +483,7 @@ public class Oblig1Test {
 
         assertEquals(0, antallFeil, "Du har for mange feil i oppgave 6");
     }
+*/
 
     ///// Oppgave 7 //////////////////////////////////////
     @org.junit.jupiter.api.Test
@@ -607,7 +610,7 @@ public class Oblig1Test {
 
         assertEquals(0, antallFeil, "Du har for mange feil i oppgave 7");
     }
-
+/*
     ///// Oppgave 8 //////////////////////////////////////
     @org.junit.jupiter.api.Test
     void oppgave8() {
@@ -935,7 +938,7 @@ public class Oblig1Test {
         }
         assertEquals(0, antallFeil, "Du har for mange feil i oppgave 10");
     }
-
+*/
     ///// Hjelpemetoder /////////////////////////////
 
     public static void bytt(int[] a, int i, int j) {

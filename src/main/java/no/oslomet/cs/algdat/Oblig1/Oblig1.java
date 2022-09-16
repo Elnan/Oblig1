@@ -3,9 +3,12 @@ package no.oslomet.cs.algdat.Oblig1;
 ////// Løsningsforslag Oblig 1 ////////////////////////
 
 import java.lang.UnsupportedOperationException;
+import java.util.Arrays;
+import java.util.NoSuchElementException;
 
 public class Oblig1 {
-    private Oblig1() {}
+    private Oblig1() {
+    }
 
     ///// Oppgave 1 //////////////////////////////////////
     public static int maks(int[] a) {
@@ -15,20 +18,22 @@ public class Oblig1 {
         int temp = 0;
 
         //Sorterer array i stigende rekkefølge
-        for (int i = 0; i <a.length; i++) {
-            for (int j = i+1; j <a.length; j++) {
+        for (int i = 0; i < a.length - 1; i++) {
+            int j = i + 1;
 
-                //Bytter plass
-                if(a[i] >a[j]) {
-                    temp = a[i];
-                    a[i] = a[j];
-                    a[j] = temp;
-                }
+            //Om noen tall er mindre enn a[i], bytter de plass
+            if (a[i] > a[j]) {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+
             }
+
         }
 
         return a[a.length - 1];
     }
+
     public static int ombyttinger(int[] a) {
 
         if (a.length == 0) throw new NoSuchElementException("Det er ingen elementer i array 'a', dvs Tabellen er tom");
@@ -37,18 +42,18 @@ public class Oblig1 {
         int ombyttinger = 0;
 
         //Sorterer array i stigende rekkefølge
-        for (int i = 0; i <a.length; i++) {
-            for (int j = i+1; j <a.length; j++) {
+        for (int i = 0; i < a.length - 1; i++) {
+            int j = i + 1;
 
-                //Bytter plass
-                if(a[i] >a[j]) {
-                    temp = a[i];
-                    a[i] = a[j];
-                    a[j] = temp;
-                    //Oppdaterer hjelpevariablen for å telle antall ombyttinger
-                    ++ombyttinger;
-                }
+            //Om noen tall er mindre enn a[i], bytter de plass
+            if (a[i] > a[j]) {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+                ++ombyttinger;
+
             }
+
         }
 
         return ombyttinger;
@@ -66,15 +71,16 @@ public class Oblig1 {
         int antallUlike = 1;
         int value = a[0];
 
-        for (int i=0; i<a.length; ++i) {
+        for (int i = 0; i < a.length; ++i) {
             int thisValue = a[i];
 
             //Om en tidligere verdi noen gang er større enn den nye, vil tabellen ikke være sortert
             if (value > thisValue) throw new IllegalStateException("Tabellen er ikke sortert stigende");
 
-            else
+            else if (value != thisValue) {
                 ++antallUlike;
-            value = thisValue;
+                value = thisValue;
+            }
 
         }
         return antallUlike;
@@ -93,10 +99,10 @@ public class Oblig1 {
         int antallUlike = 1;
 
         //Går gjennom alle elementene i tabellen
-        for (int i=1; i<a.length; ++i) {
+        for (int i = 1; i < a.length; ++i) {
 
             int j = 0;
-            for (j=0; j<i; ++j)
+            for (j = 0; j < i; ++j)
                 if (a[i] == a[j])
                     break;
 
@@ -112,11 +118,9 @@ public class Oblig1 {
     public static void delsortering(int[] a) {
 
         //Sjekker om det er 0 elementer i tabellen
-        if (a.length == 0) {
+        if (a.equals("")) {
             throw new UnsupportedOperationException("Tabellen er tom");
-        }
-
-        else {
+        } else {
 
             int i = -1;
             int j = 0;
@@ -137,8 +141,8 @@ public class Oblig1 {
             System.out.println(i);
 
             //Sorterer oddetallene, også partallene
-            Arrays.sort(a, i+1, n);
-            Arrays.sort(a, 0, i+1);
+            Arrays.sort(a, i + 1, n);
+            Arrays.sort(a, 0, i + 1);
         }
 
     }
@@ -148,10 +152,8 @@ public class Oblig1 {
 
         //Sjekker om tabellen er tom
         if (a.length == 0) {
-            throw new UnsupportedOperationException("Tabellen er tom");
-        }
-
-        else {
+            System.out.println("Tabellen er tom");
+        } else {
             //Roterer elementene i array a én gang mot høyre
             for (int i = 0; i < 1; ++i) {
 
@@ -173,14 +175,18 @@ public class Oblig1 {
         }
     }
 
-        ///// Oppgave 7 //////////////////////////////////////
+    ///// Oppgave 7 //////////////////////////////////////
     /// 7a)
     public static String flett(String s, String t) {
 
 
         if (s.length() == 1) {
             return s + t;
+        } else if (t.equals("") && s.equals("")) {
+            String tom = "";
+            return tom;
         }
+
         //initsialliserer hjelpevariabler
         int i = 0;
         int j = 0;
@@ -203,7 +209,25 @@ public class Oblig1 {
 
     /// 7b)
     public static String flett(String... s) {
-        throw new UnsupportedOperationException();
+
+        if (s.length < 1) {
+            return "";
+        }
+
+        String[] svar = new String[30];
+        Arrays.fill(svar, "");
+
+        for (int i = 0; i < s.length; ++i) {
+            for (int j = 0; j < s[i].length(); j++) {
+
+                svar[j] += s[i].charAt(j);
+
+            }
+        }
+
+        return String.join("", svar);
+
     }
 
-}  // Oblig1
+}
+// Oblig1

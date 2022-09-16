@@ -39,6 +39,7 @@ I Oppgave 4 så slet jeg litt med å finne en måte å få det til å fungere p�
 men når jeg brukte "while" istedenfor "for", så funket det.
 Sorterer først oddetall ved hjelp av modulo og noterer plasseringen
 hvor oddetall og partall møtes. Sorterer deretter tallene hver for seg.
+
 ---
 
 I Oppgave 5 så brukte jeg en hjelpevariabel til å lagre hvilken char som
@@ -52,4 +53,9 @@ rekkefølge. Gjør dette ved å gå gjennom orden annenhver og legge til en og e
 bokstav, så lenge det er bokstaver igjen.
 
 ---
-I Oppgave 7b så
+I Oppgave 7b så lagres string input i en array og loopes gjennom.
+Legger til første tegn i hvert ord i første plass i svar-array.
+Derretter andre tegn i andre plass, osv. 
+Metoden har en begrensning på 30 tegn per streng i argumentet.
+Finnes muligens bedre måter å løse dette på, men denne løsningen er effektiv når det 
+kommer til antall opperasjoner. 
